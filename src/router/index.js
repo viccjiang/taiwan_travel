@@ -1,25 +1,35 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import Home from '../views/Home.vue';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: () => import('../views/Home.vue'),
   },
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: () => import('../views/About.vue'),
   },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
+  linkActiveClass: 'active',
   routes,
+  // 換頁時，滾動到最上方
+  scrollBehavior() {
+    // console.log(to, from, savedPosition)
+    // 如果到達的頁面，路徑名稱符合特定字串的話
+    // if (to.fullPath.match('products')) {
+    //   return {
+    //     top: 500
+    //   }
+    // }
+    return {
+      top: 0,
+    };
+  },
 });
 
 export default router;
