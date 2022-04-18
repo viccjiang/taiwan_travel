@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 sticky-top">
     <div class="container">
       <router-link to="/" class="m-auto navbar-brand fs-3 fw-bolder text-primary p-0">
       <svg
