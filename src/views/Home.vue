@@ -90,7 +90,61 @@
       </div>
     </div>
   </div>
+  <!-- top -->
+  <div class="container">
+    <div class="row row-cols-12 row-cols-md-4">
+      <div class="col" v-for="item in scenic_spot" :key="item.ScenicSpotID">
+        <div class="card" style="width: 18rem;">
+          <img :src="item?.Picture?.PictureUrl1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{item.ScenicSpotName}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+
+<script>
+import getAuthorizationHeader from '../methods/getAuthorizationHeader';
+
+export default {
+  data() {
+    return {
+      scenic_spot: [],
+      tourCategory: [],
+      isLoading: false,
+    };
+  },
+  methods: {
+    getData() {
+      this.isLoading = true;
+      const url = 'https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?%24top=8&%24format=JSON';
+      this.$http.get(url, {
+        headers: getAuthorizationHeader(),
+      })
+        .then((response) => {
+          this.scenic_spot = response.data;
+          console.log(this.scenic_spot);
+          this.isLoading = false;
+        });
+    },
+  },
+  mounted() {
+    this.getData();
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .banner {

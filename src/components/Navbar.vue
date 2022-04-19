@@ -32,10 +32,10 @@
             <router-link to="/" class="p-3">首頁</router-link>
           </li>
           <li class="nav-item fw-bold">
-            <router-link to="/location" class="p-3">景點</router-link>
+            <router-link to="/location" class="p-3">景點導覽</router-link>
           </li>
           <li class="nav-item fw-bold">
-            <router-link to="/activity" class="p-0 p-md-3">活動</router-link>
+            <router-link to="/activity" class="p-0 p-md-3">觀光活動</router-link>
           </li>
         </ul>
       </div>

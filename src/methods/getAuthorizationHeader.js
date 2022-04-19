@@ -1,8 +1,8 @@
 import JsSHA from 'jssha';
 
 export default function getAuthorizationHeader() {
-  const AppID = process.env.VUE_APP_APPID;
-  const AppKey = process.env.VUE_APP_APPKEY;
+  const AppID = process.env.VUE_APP_AppID;
+  const AppKey = process.env.VUE_APP_AppKEY;
   const GMTString = new Date().toGMTString();
   const ShaObj = new JsSHA('SHA-1', 'TEXT');
   ShaObj.setHMACKey(AppKey, 'TEXT');
