@@ -99,13 +99,13 @@
             <img :src="item?.Picture?.PictureUrl1"
             class="card-imageUrl card-height w-100 object-fit" alt="景點">
           </a>
-          <div class="card-body">
+          <!-- <div class="card-body">
             <h5 class="card-title">{{ item.ScenicSpotName }}</h5>
             <p class="card-text"><i class="bi bi-clock"></i> {{ item.OpenTime }}</p>
           </div>
           <ul class="list-group list-group-flush d-flex justify-content-center" style="height:80px">
             <li class="list-group-item"><i class="bi bi-geo-alt"></i> {{ item.Address }}</li>
-          </ul>
+          </ul> -->
           <div class="card-body d-flex d-grid gap-2 mx-auto ">
             <a href="#" class="btn btn-outline-secondary card-link hover-color">查看詳情</a>
             <a href="#" class="btn btn-secondary card-link text-white">立即出發</a>
