@@ -1,4 +1,5 @@
 <template>
+  <Loading :active="isLoading" />
   <!-- banner -->
   <section class="banner mb-4 mb-md-5">
     <div class="container h-100">
@@ -92,24 +93,25 @@
   </div>
   <!-- top -->
   <div class="container mb-4 mb-md-5">
+    <h2 class="text-center border-bottom pb-3 mb-4">熱門景點</h2>
     <div class="row row-cols-12 row-cols-md-2 row-cols-lg-4">
-      <div class="col" v-for="item in scenic_spot" :key="item.ScenicSpotID">
+      <div class="col mb-4" v-for="item in scenic_spot" :key="item.ScenicSpotID">
         <div class="card ">
           <a href="#" class="img-card rounded-top">
             <img :src="item?.Picture?.PictureUrl1"
             class="card-imageUrl card-height w-100 object-fit" alt="景點">
           </a>
-          <!-- <div class="card-body">
-            <h5 class="card-title">{{ item.ScenicSpotName }}</h5>
-            <p class="card-text"><i class="bi bi-clock"></i> {{ item.OpenTime }}</p>
+          <div class="card-body">
+            <h5 class="card-title text-center">{{ item.ScenicSpotName }}</h5>
+            <!-- <p class="card-text"><i class="bi bi-clock"></i> {{ item.OpenTime }}</p> -->
           </div>
-          <ul class="list-group list-group-flush d-flex justify-content-center" style="height:80px">
-            <li class="list-group-item"><i class="bi bi-geo-alt"></i> {{ item.Address }}</li>
-          </ul> -->
-          <div class="card-body d-flex d-grid gap-2 mx-auto ">
+          <div class="card-footer d-flex d-grid gap-2 mx-auto bg-white">
             <a href="#" class="btn btn-outline-secondary card-link hover-color">查看詳情</a>
             <a href="#" class="btn btn-secondary card-link text-white">立即出發</a>
           </div>
+          <!-- <ul class="list-group list-group-flush d-flex justify-content-center" style="height:80px">
+            <li class="list-group-item"><i class="bi bi-geo-alt"></i> {{ item.Address }}</li>
+          </ul> -->
         </div>
       </div>
     </div>
