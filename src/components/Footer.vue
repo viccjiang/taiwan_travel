@@ -21,7 +21,7 @@
         <div class="container row g-0 mx-auto px-3 fs-7  text-center">
         <div class="mt-2 mb-2">本網站僅供個人作品使用，不提供商業用途 <span class="d-none d-md-inline-block"><router-link class="p-0 nav-link link-primary" to="/">｜Taiwan Travel</router-link> </span></div>
         <div class="d-flex  justify-content-center align-items-center">
-            <div class="mx-2">© 2022 taiwan travel COPYRIGHT</div>
+            <div class="mx-2">© 2022 Taipei Travel COPYRIGHT</div>
             <ul class="text-center d-flex justify-content-center align-items-center list-unstyled ">
                 <li>
                     <a href="#" class="mx-2"><i class="bi bi-github"></i></a>

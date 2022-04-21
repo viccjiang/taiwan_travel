@@ -11,7 +11,7 @@
         <div class="modal-header border-bottom-0 pb-0 ms-auto">
           <button
             type="button"
-            class="btn close"
+            class="btn btn-close"
             data-bs-dismiss="modal"
             aria-label="Close"
           >
@@ -19,13 +19,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="modal-body-title">{{ tempData.Name }}</div>
-          <div class="modal-body-addr">
+          <div class="modal-body-title m-0">{{ tempData.ScenicSpotName }}</div>
+          <div class="modal-body-address">
             <i class="fas fa-map-marker-alt"></i>{{ tempData.Address }}
           </div>
-          <p class="modal-body-context">
-            {{ tempData.Description }}
-          </p>
           <div class="modal-body-img">
             <img
               :src="tempData.Picture.PictureUrl1"
@@ -35,6 +32,9 @@
             />
             <img src="" class="card-img-top" v-else alt="attractions-img" />
           </div>
+          <p class="modal-body-context">
+            {{ tempData.DescriptionDetail }}
+          </p>
           <div class="modal-body-order">
             <p v-if="'OpenTime' in tempData"><i class="far fa-clock"></i>{{ tempData.OpenTime }}</p>
             <p v-if="'TicketInfo' in tempData">
@@ -80,27 +80,13 @@ export default {
 </script>
 
 <style scoped>
-.close {
-  background-color: #cbcbcb;
-  color: #ffffff;
-  width: 32px;
-  height: 32px;
-  font-size: 20px;
-  border: 0px;
-  padding: 0;
-  transition: all 0.3s;
-}
-.close:hover {
-  background-color: #639c74;
-  color: #ffffff;
-}
 .modal-body-title {
   font-weight: 900;
   font-size: 24px;
   color: #393939;
   margin-bottom: 22px;
 }
-.modal-body-addr {
+.modal-body-address {
   font-weight: 500;
   font-size: 14px;
   color: #6f7789;

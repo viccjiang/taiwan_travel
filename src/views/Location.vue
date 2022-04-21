@@ -1,5 +1,21 @@
 <template>
     <Loading :active="isLoading" />
+    <!-- banner -->
+    <section class="banner">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col">
+            <div class="text-light text-center">
+              <p>Welcome to TaipeiTaipei Travel </p>
+              <h2 class="display-4 fw-bold">Taipei Travel，Travel Go</h2>
+              <p class="fs-4 mb-5">
+                多給自己一點時間享受生活，走出戶外感受大自然
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="container">
       <div class="row ">
         <div class="col d-flex flex-column flex-md-row justify-content-center my-5">
@@ -50,22 +66,22 @@
       </div> -->
   <!-- </div> -->
   <div class="container mb-4 mb-md-5">
-      <div class="row row-cols-12 row-cols-md-2 row-cols-lg-4">
-        <div class="col" v-for="item in scenic_spot" :key="item.ScenicSpotID">
+      <div class="row  row-cols-12 row-cols-sm-2 row-cols-md-2 row-cols-lg-4">
+        <div class=" mb-4" v-for="item in scenic_spot" :key="item.ScenicSpotID">
           <div class="card ">
             <a href="#" class="img-card rounded-top">
               <img :src="item?.Picture?.PictureUrl1" v-if="!JSON.stringify(item.Picture) === '{}' || 'PictureUrl1' in item.Picture" class="card-imageUrl card-height w-100 object-fit" alt="景點">
               <img v-else class="card-imageUrl card-height w-100 object-fit" alt="圖片施工中">
             </a>
-            <!-- <div class="card-body">
-              <h5 class="card-title">{{ item.ScenicSpotName }}</h5>
-              <p class="card-text"><i class="bi bi-clock"></i> {{ item.OpenTime }}</p>
+            <div class="card-body">
+              <h5 class="card-title text-center m-0">{{ item.ScenicSpotName }}</h5>
             </div>
-            <ul class="list-group list-group-flush d-flex justify-content-center" style="height:80px">
-              <li class="list-group-item"><i class="bi bi-geo-alt"></i> {{ item.Address }}</li>
-            </ul> -->
-            <div v-if="item?.Picture?.PictureUrl1 !== undefined" class="card-body d-flex d-grid gap-2 mx-auto " >
-              <a href="#" class="btn btn-outline-secondary card-link hover-color" @click.prevent="openModal(item)">查看詳情</a>
+            <div v-if="item?.Picture?.PictureUrl1 !== undefined" class="card-body d-flex d-grid gap-2 mx-auto p-0">
+              <!-- <a href="#" class="btn btn-outline-secondary card-link hover-color" @click.prevent="openModal(item)">查看詳情</a> -->
+            </div>
+            <div class="card-footer border-0 d-grid bg-white">
+              <button class="btn btn-outline-secondary card-link hover-color stretched-link" type="button" @click.prevent="openModal(item)">查看詳情</button>
+              <!-- <a href="#" class="btn btn-outline-secondary card-link hover-color">查看詳情</a> -->
             </div>
           </div>
         </div>
@@ -142,6 +158,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.banner {
+  height: calc(50vh - 73px);
+  background-image: url("https://images.unsplash.com/photo-1511225070737-5af5ac9a690d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-position: center center;
+  background-size: cover;
+}
 .card-height{
   height: 200px;
 }

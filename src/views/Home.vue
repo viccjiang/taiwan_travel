@@ -6,7 +6,7 @@
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col">
           <div class="text-light text-center">
-            <p>Welcome to TaipeiTaipei Travel </p>
+            <p>Welcome to Taipei Travel </p>
             <h2 class="display-4 fw-bold">Taipei Travel，Travel Go</h2>
             <p class="fs-4 mb-5">
               多給自己一點時間享受生活，走出戶外感受大自然
@@ -14,7 +14,7 @@
           </div>
           <div class="d-flex justify-content-center align-items-center">
             <router-link
-              to="/activity"
+              to="/location"
               class="btn btn-light fs-5 px-5 py-2 me-2"
               >立即出發</router-link
             >
@@ -45,7 +45,7 @@
             </p>
           </div>
           <div class="card-footer bg-secondary rounded-3 rounded-0">
-            <a href="#" class="text-white ">Let's Go</a>
+            <router-link to="/location" class="text-white">Let's Go</router-link>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@
             </p>
           </div>
           <div class="card-footer bg-secondary rounded-3 rounded-0">
-            <a href="#" class="text-white ">Let's Go</a>
+            <router-link to="/location" class="text-white">Let's Go</router-link>
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@
             </p>
           </div>
           <div class="card-footer bg-secondary rounded-3">
-            <a href="#" class="text-white ">Let's Go</a>
+            <router-link to="/location" class="text-white">Let's Go</router-link>
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@
   <div class="container mb-4 mb-md-5">
     <h2 class="text-center border-bottom pb-3 mb-4">熱門景點</h2>
     <div class="row row-cols-12 row-cols-md-2 row-cols-lg-4">
-      <div class="col mb-4" v-for="item in scenic_spot" :key="item.ScenicSpotID">
+      <div class="mb-4" v-for="item in scenic_spot" :key="item.ScenicSpotID">
         <div class="card ">
           <a href="#" class="img-card rounded-top">
             <img :src="item?.Picture?.PictureUrl1"
@@ -105,9 +105,9 @@
             <h5 class="card-title text-center">{{ item.ScenicSpotName }}</h5>
             <!-- <p class="card-text"><i class="bi bi-clock"></i> {{ item.OpenTime }}</p> -->
           </div>
-          <div class="card-footer d-flex d-grid gap-2 mx-auto bg-white">
-            <a href="#" class="btn btn-outline-secondary card-link hover-color">查看詳情</a>
-            <a href="#" class="btn btn-secondary card-link text-white">立即出發</a>
+          <div class="card-footer border-0 d-grid bg-white">
+            <button class="btn btn-outline-secondary card-link hover-color stretched-link" type="button" @click.prevent="openModal(item)">查看詳情</button>
+            <!-- <a href="#" class="btn btn-outline-secondary card-link hover-color">查看詳情</a> -->
           </div>
           <!-- <ul class="list-group list-group-flush d-flex justify-content-center" style="height:80px">
             <li class="list-group-item"><i class="bi bi-geo-alt"></i> {{ item.Address }}</li>
@@ -116,10 +116,12 @@
       </div>
     </div>
   </div>
+  <Modal ref="Modal" :data="tempData" />
 </template>
 
 <script>
 import getAuthorizationHeader from '../methods/getAuthorizationHeader';
+import Modal from '../components/Modal.vue';
 
 export default {
   data() {
@@ -127,7 +129,11 @@ export default {
       scenic_spot: [],
       tourCategory: [],
       isLoading: false,
+      tempData: {},
     };
+  },
+  components: {
+    Modal,
   },
   methods: {
     getData() {
@@ -143,6 +149,10 @@ export default {
           console.log(this.scenic_spot);
           this.isLoading = false;
         });
+    },
+    openModal(item) {
+      this.tempData = { ...item };
+      this.$refs.Modal.showModal();
     },
   },
   computed: {

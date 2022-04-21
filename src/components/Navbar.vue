@@ -34,9 +34,9 @@
           <li class="nav-item fw-bold">
             <router-link to="/location" class="p-3">景點導覽</router-link>
           </li>
-          <li class="nav-item fw-bold">
+          <!-- <li class="nav-item fw-bold">
             <router-link to="/activity" class="p-0 p-md-3">觀光活動</router-link>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
