@@ -157,7 +157,7 @@ export default {
 <style lang="scss" scoped>
 .banner {
   height: calc(50vh - 73px);
-  background-image: url("https://images.unsplash.com/photo-1511225070737-5af5ac9a690d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-image: url("https://storage.googleapis.com/vue-course-api.appspot.com/jiangs2022vue3/1650618118867.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=nJ3ZWH5ZgIMeXdeVvaMaRZ0yZqZFM4qZYCTSI8SA%2BZXGSjvD9Jt6XXiUkWzjYm0aLd5Ng8IODP9m1i6%2BgdGEbuDJ6XmGS%2B8oTaOFLtPJwyFIdotCLqNaEVJ21TOeB2KBGbGPY7id1uggca6bO1wyekdzSp%2F%2FPAg1xKejxMSoF20%2FrTQjsXzO4jCevpB8xosmvGW5Fs%2BBcq7CedV8n5RTOyxA2yr8LbWxib1AsDN8avPTn5XziU%2BaKRPRhRypuulljTo%2FkaJoC%2FxFFavI3Q2Al1fIY3vVnFshEq7GlikPAs%2FQGbJ%2BLNb0d7U6qXRsivbn86vWJ9Gu8qJIRM6h%2BVYx%2BQ%3D%3D");
   background-position: center center;
   background-size: cover;
 }

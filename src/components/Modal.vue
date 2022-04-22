@@ -19,7 +19,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="modal-body-title m-0">{{ tempData.ScenicSpotName }}</div>
+          <div v-if="'ScenicSpotName'" class="modal-body-title m-0">{{ tempData.ScenicSpotName }}</div>
+          <div v-if="'ActivityName'" class="modal-body-title m-0">{{ tempData.ActivityName }}</div>
           <div class="modal-body-address">
             <i class="fas fa-map-marker-alt"></i>{{ tempData.Address }}
           </div>
@@ -33,6 +34,9 @@
             <img src="" class="card-img-top" v-else alt="attractions-img" />
           </div>
           <p class="modal-body-context">
+            {{ tempData.DescriptionDetail }}
+          </p>
+          <p v-if="'DescriptionDetail'" class="modal-body-context">
             {{ tempData.DescriptionDetail }}
           </p>
           <div class="modal-body-order">
