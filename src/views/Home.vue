@@ -45,13 +45,13 @@
             </p>
           </div>
           <div class="card-footer bg-secondary rounded-3 rounded-0">
-            <router-link to="/location" class="text-white">Let's Go</router-link>
+            <router-link to="/location" class="d-block text-white">Let's Go</router-link>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card h-100 border-0">
-          <a href="#" class="img-card rounded-3">
+          <a href="#" class="img-card rounded-3 ">
             <img
               src="https://images.unsplash.com/photo-1565806946529-e9500c4eb4d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
               class="card-imageUrl "
@@ -65,13 +65,13 @@
             </p>
           </div>
           <div class="card-footer bg-secondary rounded-3 rounded-0">
-            <router-link to="/location" class="text-white">Let's Go</router-link>
+            <router-link to="/location" class="d-block text-white">Let's Go</router-link>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card h-100 border-0">
-          <a href="#" class="img-card rounded-3">
+          <a href="#" class="img-card rounded-3 ">
             <img
               src="https://images.unsplash.com/photo-1630151352491-7db1466e4bfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
               class="card-imageUrl"
@@ -85,7 +85,7 @@
             </p>
           </div>
           <div class="card-footer bg-secondary rounded-3">
-            <router-link to="/location" class="text-white">Let's Go</router-link>
+            <router-link to="/location" class="d-block text-white">Let's Go</router-link>
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@
   </div>
   <!-- top -->
   <div class="container mb-4 mb-md-5">
-    <h2 class="text-center border-bottom pb-3 mb-4">熱門景點</h2>
+    <h2 class="text-start border-bottom pb-3 mb-4">熱門景點</h2>
     <div class="row row-cols-12 row-cols-md-2 row-cols-lg-4">
       <div class="mb-4" v-for="item in scenic_spot" :key="item.ScenicSpotID">
         <div class="card ">
@@ -117,10 +117,12 @@
     </div>
   </div>
   <Modal ref="Modal" :data="tempData" />
+  <Swiper></Swiper>
 </template>
 
 <script>
 import getAuthorizationHeader from '../methods/getAuthorizationHeader';
+import Swiper from '../components/Swiper.vue';
 import Modal from '../components/Modal.vue';
 
 export default {
@@ -134,6 +136,7 @@ export default {
   },
   components: {
     Modal,
+    Swiper,
   },
   methods: {
     getData() {
