@@ -39,12 +39,15 @@
           <p v-if="'DescriptionDetail'" class="modal-body-context">
             {{ tempData.DescriptionDetail }}
           </p>
+          <p v-if="'Description'" class="modal-body-context">
+            {{ tempData.Description }}
+          </p>
           <div class="modal-body-order">
-            <p v-if="'OpenTime' in tempData"><i class="far fa-clock"></i>{{ tempData.OpenTime }}</p>
-            <p v-if="'TicketInfo' in tempData">
-              <i class="fas fa-ticket-alt"></i>{{ tempData.TicketInfo }}
+            <p v-if="'OpenTime' ">{{ tempData.OpenTime }}</p>
+            <p v-if="'TicketInfo'">
+              {{ tempData.TicketInfo }}
             </p>
-            <p v-if="'Phone' in tempData"><i class="fas fa-phone"></i>{{ tempData.Phone }}</p>
+            <p v-if="'Phone'">{{ tempData.Phone }}</p>
           </div>
         </div>
       </div>
